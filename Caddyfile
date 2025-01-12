@@ -1,0 +1,14 @@
+{$DOMAIN_NAME} {
+	# Reverse proxy to Gunicorn
+	reverse_proxy 127.0.0.1:8000
+
+	# Optional: Enable logging
+	log {
+		output file /var/log/caddy/access.log
+	}
+
+	# Optional: Enable error handling
+	handle_errors {
+		respond "Something went wrong" 500
+	}
+}
